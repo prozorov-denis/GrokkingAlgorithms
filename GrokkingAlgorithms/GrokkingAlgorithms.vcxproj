@@ -139,9 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BinarySearch.cpp" />
-    <ClCompile Include="Fact.cpp" />
-    <ClCompile Include="SelectionSort.cpp" />
+    <ClCompile Include="Chapter1.cpp" />
+    <ClCompile Include="Chapter2.cpp" />
+    <ClCompile Include="Chapter3.cpp" />
+    <ClCompile Include="Chapter4.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
