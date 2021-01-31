@@ -15,3 +15,4 @@ int fact(int n);
 int sum(int* elements, int n, int i);
 int count_elements(std::list<int>* elements, std::list<int>::iterator iterator);
 int find_max(std::list<int>* elements, std::list<int>::iterator iterator);
+void quick_sort(int* elements, int n);

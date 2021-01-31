@@ -4,9 +4,17 @@
 
 int main()
 {
-	std::list<int> elements{ 1, 2, 5, 10, 2, 3, 1 };
+	const int N = 100;
+	int elements[N];
 
-	printf("%d", find_max(&elements, elements.begin()));
+	for (int i = 0; i < N; i++)
+		elements[i] = rand();
+
+	quick_sort(elements, N);
+
+	for (int i = 0; i < N; i++)
+		printf("%d ", elements[i]);
+	printf("\n");
 
 	return 0;
 }
