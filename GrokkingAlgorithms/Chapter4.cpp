@@ -35,17 +35,19 @@ void quick_sort(int* elements, int n)
 {
 	if (n > 1)
 	{
-		int pivot = elements[0];
+		int pivot_index = n / 2;
+		int pivot = elements[pivot_index];
 		int n_less = 0;
 		int n_greater = 0;
 		int* less = NULL;
 		int* greater = NULL;
 
-		for (int i = 1; i < n; i++)
-			if (elements[i] < pivot)
-				++n_less;
-			else
-				++n_greater;
+		for (int i = 0; i < n; i++)
+			if (i != pivot_index)
+				if (elements[i] < pivot)
+					++n_less;
+				else
+					++n_greater;
 
 		if (n_less > 0)
 			less = new int[n_less];
@@ -55,23 +57,24 @@ void quick_sort(int* elements, int n)
 
 		int i_less = 0;
 		int i_greater = 0;
-		for (int i = 1; i < n; i++)
-			if (elements[i] < pivot)
-			{
-				if (n_less > 0)
+		for (int i = 0; i < n; i++)
+			if (i != pivot_index)
+				if (elements[i] < pivot)
 				{
-					less[i_less] = elements[i];
-					++i_less;
+					if (n_less > 0)
+					{
+						less[i_less] = elements[i];
+						++i_less;
+					}
 				}
-			}
-			else
-			{
-				if (n_greater > 0)
+				else
 				{
-					greater[i_greater] = elements[i];
-					++i_greater;
+					if (n_greater > 0)
+					{
+						greater[i_greater] = elements[i];
+						++i_greater;
+					}
 				}
-			}
 		
 		if (n_less > 1)
 			quick_sort(less, n_less);
